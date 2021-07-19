@@ -13,11 +13,11 @@ class Data:
     def _init_data_grabber(self, data_source: str):
         if data_source == 'YFINANCE':
             data_grabber = YF()
-            return data_grabber
 
-    def price_df(self, ticker: str, start_date, end_date):
-        ''' returns a pandas df of OHLCV data for the ticker '''
-        pass
+        return data_grabber
+
+    def price_df(self, ticker: str, start_date=None, end_date=None):
+        return self.data.price_df(ticker, start_date, end_date)
 
     def ticker_meta(self, ticker: str):
         '''
