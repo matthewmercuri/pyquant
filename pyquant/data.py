@@ -1,3 +1,6 @@
+from .yf import YF
+
+
 class Data:
     def __init__(self, data_source: str) -> None:
         self.valid_data_sources = ['YFINANCE']
@@ -9,7 +12,16 @@ class Data:
 
     def _init_data_grabber(self, data_source: str):
         if data_source == 'YFINANCE':
-            pass
+            data_grabber = YF()
+            return data_grabber
 
-    def price_df(self, ticker):
+    def price_df(self, ticker: str, start_date, end_date):
+        ''' returns a pandas df of OHLCV data for the ticker '''
+        pass
+
+    def ticker_meta(self, ticker: str):
+        '''
+        returns a JSON like object holding meta data about the ticker:
+        - name, industry, description,...
+        '''
         pass
